@@ -48,7 +48,7 @@ export const CatGallery = () => {
       )}
       {isError && !isLoading && (
         <>
-          <p>Не смогили загрузить котиков, попробовать снова:</p>
+          <p>Не смогли загрузить котиков, попробовать снова:</p>
           <button onClick={handleFetchData}>Загрузить котиков</button>
         </>
       )}

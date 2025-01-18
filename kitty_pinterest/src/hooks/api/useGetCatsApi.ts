@@ -13,7 +13,7 @@ export const useGetCatsApi = () => {
   const [isError, setIsError] = useState<boolean>(false);
 
   const fetchData = async ({
-    limit = 15,
+    limit = 30,
   }: {
     limit?: number;
   }): Promise<CatResponseItem[]> => {
