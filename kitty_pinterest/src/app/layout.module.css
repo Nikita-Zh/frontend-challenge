@@ -1,0 +1,15 @@
+.page {
+  min-height: 100svh;
+  font-family: var(--font-roboto);
+}
+.main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-inline: var(--container-padding-inline);
+  padding-top: calc(var(--nav-height) + var(--container-padding-inline));
+  padding-bottom: var(--container-padding-inline);
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+}
