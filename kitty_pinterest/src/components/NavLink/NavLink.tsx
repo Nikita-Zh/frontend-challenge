@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnchorHTMLAttributes, ReactNode, useEffect } from "react";
+import { AnchorHTMLAttributes, ReactNode } from "react";
 
 import styles from "./NavLink.module.css";
 
@@ -13,9 +13,6 @@ type Props = AnchorHTMLAttributes<HTMLAnchorElement> & {
 
 export const NavLink = ({ href, children, className, ...rest }: Props) => {
   const path = usePathname();
-  useEffect(() => {
-    console.log("PATH: ", path, " ", href, path === href);
-  }, [href, path]);
 
   return (
     <Link

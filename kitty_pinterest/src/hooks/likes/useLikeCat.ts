@@ -19,7 +19,6 @@ export const useLikeCat = () => {
   ) => {
     const isLiked = likedCats.some((likedCat) => likedCat.id === imgInfo.id);
     if (isLiked) {
-      //   console.log("DELETED FROM LIKED ", imgInfo);
       const updatedLikes = likedCats.filter(
         (likedCat) => likedCat.id !== imgInfo.id
       );
@@ -27,7 +26,6 @@ export const useLikeCat = () => {
       setLikedCats(updatedLikes);
       localStorage.setItem(localVar, JSON.stringify(updatedLikes));
     } else {
-      //   console.log("ADDED TO LIKED ", imgInfo);
       const updatedLikes = [...likedCats, imgInfo];
 
       setLikedCats(updatedLikes);

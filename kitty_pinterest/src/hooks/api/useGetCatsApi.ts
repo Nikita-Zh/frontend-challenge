@@ -26,11 +26,10 @@ export const useGetCatsApi = () => {
     })
       .then((res) => (res.ok ? res.json() : Promise.reject))
       .then((res) => {
-        console.log("RESP: ", res);
         return res;
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
         setIsError(true);
         return [];
       })

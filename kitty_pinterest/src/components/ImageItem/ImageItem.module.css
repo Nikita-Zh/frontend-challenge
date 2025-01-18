@@ -1,14 +1,3 @@
-.wrapper {
-}
-
-.container {
-  max-width: var(--max-width);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 225px);
-  row-gap: 46px;
-  column-gap: 48px;
-}
-
 .image {
   position: relative;
   height: 225px;
