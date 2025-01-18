@@ -5,10 +5,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   assetPrefix: isProd ? "/frontend-challenge/" : "",
   basePath: isProd ? "/frontend-challenge" : "",
-  output: "export",
 
   images: {
-    // unoptimized: true,
+    // unoptimized: isProd ? true : false,
+    unoptimized: true,
     remotePatterns: [
       {
         hostname: "cdn2.thecatapi.com",

@@ -16,7 +16,7 @@ export const ImageItem = ({ url, alt, isLiked, onLike }: Props) => {
         fill
         sizes="100%"
         alt={alt}
-        style={{ objectFit: "cover", background: "#333" }}
+        style={{ objectFit: "cover", background: "#999" }}
         quality={50}
       />
       <button
