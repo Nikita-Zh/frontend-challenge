@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  basePath: "frontend-challenge",
+  // basePath: "frontend-challenge",
   output: "export",
   images: {
     remotePatterns: [
