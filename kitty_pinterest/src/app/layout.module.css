@@ -9,7 +9,3 @@
   padding-top: calc(var(--nav-height) + var(--container-padding-inline));
   padding-bottom: var(--container-padding-inline);
 }
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-}

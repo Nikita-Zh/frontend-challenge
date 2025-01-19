@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 const baseUrl = "https://api.thecatapi.com/v1/images/search";
 
@@ -12,31 +12,30 @@ export const useGetCatsApi = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
 
-  const fetchData = async ({
-    limit = 30,
-  }: {
-    limit?: number;
-  }): Promise<CatResponseItem[]> => {
-    setIsLoading(true);
-    setIsError(false);
+  const fetchData = useCallback(
+    async ({ limit = 30 }: { limit?: number }): Promise<CatResponseItem[]> => {
+      setIsLoading(true);
+      setIsError(false);
 
-    return fetch(`${baseUrl}?limit=${limit}`, {
-      method: "GET",
-      headers: { "x-api-key": process.env.NEXT_PUBLIC_CAT_API_KEY || "" },
-    })
-      .then((res) => (res.ok ? res.json() : Promise.reject))
-      .then((res) => {
-        return res;
+      return fetch(`${baseUrl}?limit=${limit}`, {
+        method: "GET",
+        headers: { "x-api-key": process.env.NEXT_PUBLIC_CAT_API_KEY || "" },
       })
-      .catch((err) => {
-        console.error(err);
-        setIsError(true);
-        return [];
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  };
+        .then((res) => (res.ok ? res.json() : Promise.reject))
+        .then((res) => {
+          return res;
+        })
+        .catch((err) => {
+          console.error(err);
+          setIsError(true);
+          return [];
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    },
+    []
+  );
 
   return { isLoading, isError, fetchData };
 };

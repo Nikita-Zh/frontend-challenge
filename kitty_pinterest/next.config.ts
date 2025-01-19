@@ -5,9 +5,9 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   assetPrefix: isProd ? "/frontend-challenge/" : "",
   basePath: isProd ? "/frontend-challenge" : "",
+  output: "export",
 
   images: {
-    // unoptimized: isProd ? true : false,
     unoptimized: true,
     remotePatterns: [
       {
