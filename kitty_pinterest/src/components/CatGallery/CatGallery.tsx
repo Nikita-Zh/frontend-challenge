@@ -42,14 +42,19 @@ export const CatGallery = () => {
           );
         })}
       </div>
-      {isLoading && (
+      {data.length === 0 && isLoading && (
+        <div className={styles.message}>... загружаем котиков ...</div>
+      )}
+      {data.length !== 0 && isLoading && (
         <div className={styles.message}>... загружаем еще котиков ...</div>
       )}
       {isError && !isLoading && (
-        <>
-          <p>Не смогли загрузить котиков, попробовать снова:</p>
-          <button onClick={handleFetchData}>Загрузить котиков</button>
-        </>
+        <div className={styles.message_error}>
+          Не смогли загрузить котиков, попробовать снова:
+          <button className={styles.load_button} onClick={handleFetchData}>
+            Загрузить котиков
+          </button>
+        </div>
       )}
     </>
   );
